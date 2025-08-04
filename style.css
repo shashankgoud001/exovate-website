@@ -658,45 +658,50 @@ html {
 
 .input-group {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .field {
   width: 100%;
-  padding: 12px 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: none;
+  padding: 20px 14px 20px 14px;
+  font-size: 18px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  background-color: white;
+}
+
+.field:focus {
+  border-color: #555;
 }
 
 .input-label,
 .message {
   position: absolute;
-  top: 12px;
-  left: 10px;
-  color: #aaa;
+  top: 20px;
+  left: 14px;
+  font-size: 18px;
+  color: #888;
   pointer-events: none;
-  transition: 0.2s ease all;
   background: white;
-  padding: 0 5px;
-  font-size: 16px;
+  padding: 0 6px;
+  transition: 0.2s ease all;
 }
 
-/* Move label up on focus or when there's content */
+/* Floating effect when focused or filled */
 .field:focus + .input-label,
 .field:not(:placeholder-shown) + .input-label,
 .field:focus + .message,
 .field:not(:placeholder-shown) + .message {
   top: -10px;
-  left: 8px;
-  font-size: 12px;
-  color: #333;
+  left: 10px;
+  font-size: 13px;
+  color: #222;
 }
 
-/* Optional: improve textarea height */
+/* Bigger textarea */
 textarea.field {
-  min-height: 120px;
+  min-height: 150px;
   resize: vertical;
 }
 
