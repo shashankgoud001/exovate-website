@@ -658,55 +658,46 @@ html {
 
 .input-group {
   position: relative;
+  margin-bottom: 20px;
 }
 
 .field {
-  width: 45rem;
-  background-color: transparent;
-  border: none;
-  border-bottom: 0.2rem dashed #636363;
-  margin: 3rem 0;
-  padding: 1rem 1rem 1rem 0;
-  font-family: "Muli", serif;
-  font-size: 1.6rem;
-  color: #4b4b4b;
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: none;
 }
 
-.input-group input {
-  height: 4rem;
-}
-
-.input-group textarea {
-  max-height: 7rem;
-  max-width: 45rem;
-}
-
-.field:focus {
-  border-bottom-style: solid;
-}
-
-.input-group label {
-  position: absolute;
-  left: 0;
-  font-family: "Baloo Da 2", serif;
-  font-size: 1.8rem;
-  color: #4b4b4b;
-  text-transform: uppercase;
-  pointer-events: none;
-  transition: all 0.3s;
-}
-
-.input-label {
-  bottom: 3rem;
-}
-
+.input-label,
 .message {
-  bottom: 6rem;
+  position: absolute;
+  top: 12px;
+  left: 10px;
+  color: #aaa;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background: white;
+  padding: 0 5px;
+  font-size: 16px;
 }
 
-.field:focus ~ label {
-  transform: translateY(-3rem);
-  font-size: 1.2rem;
+/* Move label up on focus or when there's content */
+.field:focus + .input-label,
+.field:not(:placeholder-shown) + .input-label,
+.field:focus + .message,
+.field:not(:placeholder-shown) + .message {
+  top: -10px;
+  left: 8px;
+  font-size: 12px;
+  color: #333;
+}
+
+/* Optional: improve textarea height */
+textarea.field {
+  min-height: 120px;
+  resize: vertical;
 }
 
 .submit-btn {
